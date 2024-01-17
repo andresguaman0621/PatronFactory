@@ -1,0 +1,30 @@
+﻿
+
+@{
+
+    decimal totalLocal = (decimal)ViewBag.totalLocal;
+    decimal totalForeign = (decimal)ViewBag.totalForeign;
+    
+}
+
+<div class="row">
+    <div class="col-12">
+        
+
+        @*caja de texto para el usuario*@
+        <form method="post" action="@Url.Action("Index", "ProductDetails")">
+            @Html.Label("Ingrese las horas trabajadas en el mes:")
+            @Html.TextBox("total") 
+            <input type="submit" value="Calcular" />
+        </form>
+        @* TOTAL LOCAL *@
+        <label>Salario Neto: </label>
+        <b>@totalLocal</b><br/>
+
+        @* TOTAL EXTRANJERO *@
+        <label>Salario neto + ganancia: </label>
+        <b>@totalForeign</b><br />
+
+
+    </div>
+</div>
